@@ -35,7 +35,7 @@ const DraggableLayout = () => {
 
   return (
     <div className={theme}>
-      <div className='bg-white text-blue-900 dark:bg-gray-900 dark:text-white dark:opacity-90 w-full h-screen p-5'>
+      <div className='bg-white text-blue-900 dark:bg-gray-900 dark:text-white dark:opacity-90 w-full h-screen fixed overflow-scroll p-5'>
         <div>
           <div className='flex justify-center items-center'>
             <button
@@ -62,7 +62,7 @@ const DraggableLayout = () => {
           verticalCompact={true}
           useCSSTransforms={false}
           mounted={true}
-          margin={[24, 16]}
+          margin={[24, 12]}
           isDraggable={isEnabled}
         >
           {skillsGrid.map((item) => (
@@ -73,7 +73,7 @@ const DraggableLayout = () => {
               } flex flex-col justify-center items-center rounded-full shadow-md shadow-cyan-800`}
             >
               <div className='w-12 h-16 flex justify-center items-center'>
-                <img src={`/stack/${item}.svg`} width={50} height={80} alt={item} />
+                <img src={`/stack/${item}.svg`} width={24} height={60} alt={item} />
               </div>
               <div className='text-center text-xs'>
                 <span className='capitalize'>{item}</span>
