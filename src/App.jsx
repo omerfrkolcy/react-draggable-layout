@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import DraggableLayout from './components/DraggableLayout';
 
 export const ThemeContext = React.createContext({ theme: 'light', toggleTheme: () => {}, isDarkMode: false });
@@ -13,6 +14,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDarkMode: theme === 'dark' }}>
       <DraggableLayout />
+      <Analytics />
     </ThemeContext.Provider>
   );
 }

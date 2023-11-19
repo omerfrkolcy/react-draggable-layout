@@ -7,7 +7,8 @@
 }
 
 .react-grid-placeholder {
-  background-color: #eaa18a;
+  border: #155e8c dashed 2px;
+  background-color: #ffb198;
   opacity: 0.1;
   transition: all 0.3s ease;
   border-radius: 50%;
