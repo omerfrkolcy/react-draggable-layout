@@ -68,9 +68,9 @@ const DraggableLayout = () => {
                 key={item}
                 className={`${
                   isEnabled
-                    ? 'ease-linear duration-100 shadow-custom-light dark:hover:shadow-custom-dark cursor-pointer'
+                    ? 'ease-linear duration-100 shadow-custom-light dark:shadow-custom-dark cursor-pointer'
                     : ''
-                } flex flex-col justify-center items-center rounded-full shadow-md shadow-cyan-800`}
+                } flex flex-col justify-center items-center rounded-full shadow-cyan-800`}
               >
                 <div className='flex justify-center items-center'>
                   <img src={`/stack/${item}.svg`} width={32} height={48} alt={item} />
