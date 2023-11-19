@@ -32,6 +32,7 @@ const DraggableLayout = () => {
 
   const { isDarkMode, theme, toggleTheme } = useContext(ThemeContext);
   const [isEnabled, setIsEnabled] = useState(false);
+  const layout = Helpers.generateLayout(skillsGrid, 6);
 
   return (
     <div className={theme}>
@@ -48,21 +49,22 @@ const DraggableLayout = () => {
           </div>
         </div>
         <ReactGridLayout
-          className='relative'
-          cols={{ lg: 16, md: 12, sm: 10, xs: 8, xxs: 6 }}
+          className='react-drag relative max-w-5xl m-auto'
+          cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
           layouts={{
-            lg: Helpers.generateLayout(skillsGrid, 8),
-            md: Helpers.generateLayout(skillsGrid, 6),
-            sm: Helpers.generateLayout(skillsGrid, 5),
-            xs: Helpers.generateLayout(skillsGrid, 4),
-            xxs: Helpers.generateLayout(skillsGrid, 3),
+            lg: layout,
+            md: layout,
+            sm: layout,
+            xs: layout,
+            xxs: layout,
           }}
-          rowHeight={24}
-          compactType='vertical'
+          maxRows={4}
+          rowHeight={16}
+          compactType='horizontal'
           verticalCompact={true}
           useCSSTransforms={false}
-          mounted={true}
-          margin={[24, 12]}
+          mounted
+          margin={[32, 24]}
           isDraggable={isEnabled}
         >
           {skillsGrid.map((item) => (
@@ -72,8 +74,8 @@ const DraggableLayout = () => {
                 isEnabled ? 'animate-shake hover:shadow-custom-light dark:hover:shadow-custom-dark cursor-pointer' : ''
               } flex flex-col justify-center items-center rounded-full shadow-md shadow-cyan-800`}
             >
-              <div className='w-12 h-16 flex justify-center items-center'>
-                <img src={`/stack/${item}.svg`} width={24} height={60} alt={item} />
+              <div className='flex justify-center items-center'>
+                <img src={`/stack/${item}.svg`} width={48} height={60} alt={item} />
               </div>
               <div className='text-center text-xs'>
                 <span className='capitalize'>{item}</span>
