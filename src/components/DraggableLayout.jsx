@@ -32,7 +32,6 @@ const DraggableLayout = () => {
 
   const { isDarkMode, theme, toggleTheme } = useContext(ThemeContext);
   const [isEnabled, setIsEnabled] = useState(false);
-  const layout = Helpers.generateLayout(skillsGrid, 6);
 
   return (
     <div className={theme}>
@@ -40,7 +39,7 @@ const DraggableLayout = () => {
         <div>
           <div className='flex justify-center items-center'>
             <button
-              className='p-3 m-3 text-sm rounded-full shadow-md shadow-cyan-800'
+              className='p-3 m-3 text-sm rounded-full shadow-sm shadow-cyan-800'
               onClick={() => setIsEnabled(!isEnabled)}
             >
               {`Click here to ${isEnabled ? 'lock current layout' : 'use drag & drop functionality'} !`}
@@ -50,32 +49,31 @@ const DraggableLayout = () => {
         </div>
         <ReactGridLayout
           className='react-drag relative max-w-5xl m-auto'
-          cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
+          cols={{ lg: 8, md: 7, sm: 6, xs: 4, xxs: 3 }}
           layouts={{
-            lg: layout,
-            md: layout,
-            sm: layout,
-            xs: layout,
-            xxs: layout,
+            lg: Helpers.generateLayout(skillsGrid, 8),
+            md: Helpers.generateLayout(skillsGrid, 7),
+            sm: Helpers.generateLayout(skillsGrid, 6),
+            xs: Helpers.generateLayout(skillsGrid, 4),
+            xxs: Helpers.generateLayout(skillsGrid, 3),
           }}
-          maxRows={4}
-          rowHeight={16}
-          compactType='horizontal'
-          verticalCompact={true}
+          rowHeight={12}
           useCSSTransforms={false}
           mounted
-          margin={[32, 24]}
+          margin={[48, 12]}
           isDraggable={isEnabled}
         >
           {skillsGrid.map((item) => (
             <div
               key={item}
               className={`${
-                isEnabled ? 'animate-shake hover:shadow-custom-light dark:hover:shadow-custom-dark cursor-pointer' : ''
+                isEnabled
+                  ? 'animate-shake ease-linear duration-100 hover:shadow-custom-light dark:hover:shadow-custom-dark cursor-pointer'
+                  : ''
               } flex flex-col justify-center items-center rounded-full shadow-md shadow-cyan-800`}
             >
               <div className='flex justify-center items-center'>
-                <img src={`/stack/${item}.svg`} width={48} height={60} alt={item} />
+                <img src={`/stack/${item}.svg`} width={32} height={48} alt={item} />
               </div>
               <div className='text-center text-xs'>
                 <span className='capitalize'>{item}</span>

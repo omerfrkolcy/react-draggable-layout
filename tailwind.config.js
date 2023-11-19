@@ -15,7 +15,7 @@ export default {
         },
       },
       animation: {
-        shake: 'shake 0.5s infinite',
+        shake: 'shake 0.5s infinite ease',
       },
       boxShadow: {
         'custom-light': '0 0 2em #4096a6',

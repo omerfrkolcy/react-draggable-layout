@@ -5,3 +5,10 @@
 .react-drag * {
   user-select: none;
 }
+
+.react-grid-placeholder {
+  background-color: #eaa18a;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
