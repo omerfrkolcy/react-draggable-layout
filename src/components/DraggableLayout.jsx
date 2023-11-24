@@ -49,7 +49,7 @@ const DraggableLayout = () => {
             </div>
           </div>
           <ReactGridLayout
-            className='react-drag w-full'
+            className='select-none w-full relative'
             cols={{ lg: 8, md: 7, sm: 6, xs: 4, xxs: 3 }}
             layouts={{
               lg: generateLayout(skillsGrid, 8),
@@ -67,9 +67,7 @@ const DraggableLayout = () => {
               <div
                 key={item}
                 className={`${
-                  isEnabled
-                    ? 'ease-linear duration-100 shadow-custom-light dark:shadow-custom-dark cursor-pointer'
-                    : ''
+                  isEnabled ? 'ease-linear duration-100 shadow-custom-light dark:shadow-custom-dark cursor-pointer' : ''
                 } flex flex-col justify-center items-center rounded-full shadow-cyan-800`}
               >
                 <div className='flex justify-center items-center'>

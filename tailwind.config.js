@@ -18,8 +18,8 @@ export default {
         shake: 'shake 0.5s infinite ease',
       },
       boxShadow: {
-        'custom-light': '0 0 2em #4096a6',
-        'custom-dark': '0 0 2em #a8ffdfa8',
+        'custom-light': '0 0 1em #4096a6',
+        'custom-dark': '0 0 1em #a8ffdfa8',
       },
     },
   },

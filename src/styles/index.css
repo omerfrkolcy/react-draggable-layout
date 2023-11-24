@@ -2,14 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-drag * {
-  user-select: none;
-}
-
 .react-grid-placeholder {
   border: #155e8c dashed 2px;
   background-color: #ffb198;
   opacity: 0.1;
   transition: all 0.3s ease;
   border-radius: 50%;
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+}
+
+.react-grid-item.react-grid-placeholder {
+  opacity: 0.1;
+  transition-duration: 100ms;
+  z-index: 2;
 }
